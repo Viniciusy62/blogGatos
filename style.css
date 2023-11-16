@@ -2,7 +2,7 @@
 TODO: 
 [x] Se desafiar e montar a base do projeto usando o grid-template-areas;
 [x] Mobile First: inicie o projeto deixando-o responsivo em telas menores para depois ajustar para uma versão desktop;
-[] Unidade de medida flexível;
+[x] Unidade de medida flexível;
 [x] Grid;
 [x] Variáveis no CSS;
 [x] Cores HSL;
@@ -83,6 +83,10 @@ header input {
   font-weight: 600;
   line-height: 100%;
   color: var(--font-light);
+}
+
+.search {
+  width: 100%;
 }
 
 header input::placeholder {
@@ -192,4 +196,61 @@ footer {
 footer p {
   font-size: 1.6rem;
   font-weight: 600;
+}
+
+@media (min-width: 924px) {
+  body {
+    grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+
+    justify-content: center;
+  }
+
+  /* header input {
+    min-width: 924px;
+  } */
+
+  header, footer {
+    width: 100%;
+    position: absolute;
+  }
+
+  header {
+    top: 0;
+  }
+
+  .search {
+    max-width: 150rem;
+  }
+
+  main h2, main .enjoy, main p, aside,main p:last-child {
+    margin: 0;
+  }
+
+  main {
+    padding: 2.2rem;
+    max-width: 80rem;
+  }
+  
+  main::before {
+   
+    height: 40rem;
+    
+  }
+
+  aside {
+    padding: 0 2.2rem;
+    max-width: 50rem;
+  }
+
+
+  footer {
+    bottom: 0;
+  }
+
+  /* main::before {
+    margin: 4.4rem 2.2rem 0;
+  } */
 }
